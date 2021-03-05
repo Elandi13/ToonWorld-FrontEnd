@@ -23,12 +23,18 @@ function MainPage() {
         return cartoon.description.includes(search)
     })
 
+    function addCartoon(newCartoon){
+        const updatedCartoons = [...cartoons, newCartoon]
+        setCartoons(updatedCartoons)
+    }
+
+
     return(
         <div>
         <h2>
             MainPage
             <Header cartoons={filteredCartoons} onHandleSearchChange={handleSearchChange}/> 
-            <NewForm />
+            <NewForm onAddCartoon ={addCartoon}/>
             <CartoonContainer cartoons ={filteredCartoons}/> 
         </h2>
         </div>

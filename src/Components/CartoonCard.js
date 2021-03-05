@@ -5,13 +5,8 @@ function CartoonCard({cartoonInfo}) {
     const{tv_show, title, year, episode, description, clip, image, era} = cartoonInfo
     return(
         <Card>
-            <div className="cartoon_card" height="200vh" width="100vw"> 
-                    <iframe position="relative" width="100%" height="100%" src={clip}>
-                    </iframe>
-                    <p> 
-                        {era}
-                    </p>
-                    <img src={image} alt="test"/>
+            <div className="cartoon_card" height="100vh" width="100vh"> 
+                    <img src={image} alt ="cartoon-image" height = "100%" width = "100%" />
             </div>
         </Card>
     )
@@ -20,3 +15,8 @@ function CartoonCard({cartoonInfo}) {
 export default CartoonCard;
 
 ///child of CartoonContainer
+
+
+///use this for cartoon show page
+/* <iframe position="absolute" width="100%" height="100%" src={clip}>
+</iframe> */
