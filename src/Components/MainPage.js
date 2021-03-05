@@ -1,12 +1,19 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import Header from "./Header"
 import NewForm from "./NewForm"
 import CartoonContainer from "./CartoonContainer"
-import cartoons from "../data"
+
 
 function MainPage() {
 
     const [search, setSearch] = useState("")
+    const [cartoons, setCartoons] = useState([])
+    
+    useEffect(()=> {
+        fetch(`http://localhost:3000/cartoons`)
+        .then(response => response.json())
+        .then((cartoonArray) => setCartoons(cartoonArray))
+    }, [])
 
     function handleSearchChange(event){
         setSearch(event.target.value)
