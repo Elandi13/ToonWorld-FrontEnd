@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 
 
-function Header() {
+
+function Header({cartoons, onHandleSearchChange}) {
+
     return(
         <div className = "header-container">
             <ul className = "Navbar">
@@ -13,7 +15,8 @@ function Header() {
 
                 <li className = "Navbar-item item-filter">
                 <label htmlFor="value"> Era:</label>
-                    <select value="era" > 
+                    <select > 
+                        <option> All </option>
                         <option> 1991 - 1996 </option>
                         <option> 2000 - 2004 </option>
                         <option> 2005 - 2009 </option>
@@ -22,7 +25,7 @@ function Header() {
                 </li>
 
                 <li className = "Navbar-item item-search">
-                    <input type = "text" placeholder = "Search..." />
+                    <input type = "text" placeholder = "Search..." onChange={onHandleSearchChange}/>
                     <button className = "search-button"> 🔍 </button>
                 
                 </li>
@@ -32,7 +35,7 @@ function Header() {
                 </li>
 
                 <li>
-                    <button> Add A Clip!</button>
+                    <button> Form Redirect</button>
                 </li>
 
             </ul>

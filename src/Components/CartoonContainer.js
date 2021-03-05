@@ -1,5 +1,6 @@
 import React from "react"
 import CartoonCard from "./CartoonCard"
+import { Card } from "semantic-ui-react";
 
 function CartoonContainer({cartoons}) {
     const cartoonList = cartoons.map((cartoon)=>{
@@ -8,9 +9,9 @@ function CartoonContainer({cartoons}) {
         cartoonInfo={cartoon}/>
     })
     return(
-        <ul> 
+        <Card.Group itemsPerRow={3}>
             {cartoonList}
-        </ul>
+        </Card.Group>
     )
 }
 
