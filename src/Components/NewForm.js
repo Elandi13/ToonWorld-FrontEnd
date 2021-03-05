@@ -20,7 +20,6 @@ function NewForm({onAddCartoon}) {
 
     function handleSubmit(event){
         event.preventDefault()
-        console.log(formData)
         const newCartoon = {
             tv_show: formData.tv_show,
             title: formData.title,
@@ -59,9 +58,9 @@ function NewForm({onAddCartoon}) {
                 <label htmlFor = "era"> </label>
                 <select placeholder="Select an Era" > 
                     <option > Era </option>
-                    <option value="1990s" name ="era" onChange={handleFormChange}> 1990's </option>
-                    <option name ="era" onChange={handleFormChange}> 2000's </option>
-                    <option name ="era" onChange={handleFormChange}> 2010's </option>
+                    <option value="1990s" name ="era" onClick={handleFormChange}> 1990's </option>
+                    <option value="2000s" name ="era" onClick={handleFormChange}> 2000's </option>
+                    <option value="2010s" name ="era" onClick={handleFormChange}> 2010's </option>
                 </select>
 
                 <label htmlFor = "episode" > </label>
