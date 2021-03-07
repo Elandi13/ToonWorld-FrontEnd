@@ -1,7 +1,7 @@
 import React from "react"
 // import { Card } from "semantic-ui-react";
 
-function CartoonCard({cartoonInfo, handleDeleteCartoon, oldCartoonList}) {
+function CartoonCard({cartoonInfo, handleDeleteCartoon}) {
     const{id, tv_show, title, year, episode, description, clip, image, era} = cartoonInfo
     // console.log(id)
 

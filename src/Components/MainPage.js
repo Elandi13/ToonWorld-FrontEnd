@@ -21,19 +21,23 @@ function MainPage() {
         setSearch(event.target.value)
     }
 
-    const filteredEra = cartoons.filter((cartoon) => {
-        return cartoon.era === eraSelect
-        // if (eraSelect === "all") {
-        //     return cartoon.era === eraSelect
-        // } else if (eraSelect === "1990s"){
-        //     return cartoon.era ===eraSelect
-        // }
 
-    })
-    
-    const filteredCartoons = filteredEra.filter((cartoon) => {
+    // const filteredEra = cartoons.filter((cartoon) => {
+    //     return cartoon.era === eraSelect
+    // })
+
+    // BELOW IS OUR FILTERED CARTOONS QUESTION 
+
+    const filteredCartoons = cartoons.filter((cartoon) => {
         return cartoon.description.includes(search)
     })
+
+    if (eraSelect !== "all") {
+        filteredCartoons.filter((cartoon) => {
+            return cartoon.era === eraSelect
+        })
+    }
+
 
     function addCartoon(newCartoon){
         const updatedCartoons = [...cartoons, newCartoon]
@@ -61,7 +65,7 @@ function MainPage() {
                          <NewForm onAddCartoon ={addCartoon}/>
                      {/* </Route>
                 </Switch> */}
-            <CartoonContainer filteredCartoons ={filteredCartoons} oldCartoonList={cartoons} handleDeleteCartoon={handleDeleteCartoon}/> 
+            <CartoonContainer filteredCartoons ={filteredCartoons} handleDeleteCartoon={handleDeleteCartoon}/> 
             </h2>
         </div>
     )
