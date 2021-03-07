@@ -1,26 +1,24 @@
 import React, { useState } from "react"
+import {Link} from "react-router-dom"
 
 
-
-function Header({cartoons, onHandleSearchChange}) {
-
+function Header({cartoons, onHandleSearchChange, onEraSelect}) {
     return(
         <div className = "header-container">
             <ul className = "Navbar">
                 <li className = "Navbar-item item-logo" >
-                    <a href = "/">
+                    <Link to = "/home" className = "logo-home">
                         <img className = "logo-image" src = "https://media.philstar.com/photos/2020/08/19/bugs_2020-08-19_15-49-01.jpg" alt = "logo" height = "100vh" weight = "100vw" />
-                    </a> 
+                    </Link> 
                 </li>
 
                 <li className = "Navbar-item item-filter">
                 <label htmlFor="value"> Era:</label>
-                    <select > 
-                        <option> All </option>
-                        <option> 1991 - 1996 </option>
-                        <option> 2000 - 2004 </option>
-                        <option> 2005 - 2009 </option>
-                        <option> 2010 - 2014 </option>
+                    <select name = "era" onChange={onEraSelect} > 
+                        <option value= "all" > All </option>
+                        <option value= "1990s"> 1990's </option>
+                        <option value="2000s" > 2000's </option>
+                        <option value="2010s" > 2010's </option>
                     </select>
                 </li>
 

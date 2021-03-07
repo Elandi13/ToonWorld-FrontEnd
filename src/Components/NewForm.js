@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 
 function NewForm({onAddCartoon}) {
-    const [formEraSelection, setformEraSelection] = useState("")
     const[formData, setFormData] = useState({
         tv_show: "", 
         title: "", 
@@ -56,11 +55,11 @@ function NewForm({onAddCartoon}) {
                 <input type="number" name="year" placeholder="Year" value={formData.year} onChange={handleFormChange}/>
 
                 <label htmlFor = "era"> </label>
-                <select placeholder="Select an Era" > 
-                    <option > Era </option>
-                    <option value="1990s" name ="era" onClick={handleFormChange}> 1990's </option>
-                    <option value="2000s" name ="era" onClick={handleFormChange}> 2000's </option>
-                    <option value="2010s" name ="era" onClick={handleFormChange}> 2010's </option>
+                <select name = "era"  placeholder ="era" value = {formData.era} onChange={handleFormChange} > 
+                    <option hidden selected> Era </option>
+                    <option value="1990s" > 1990's </option>
+                    <option value="2000s" > 2000's </option>
+                    <option value="2010s" > 2010's </option>
                 </select>
 
                 <label htmlFor = "episode" > </label>
