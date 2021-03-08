@@ -5,6 +5,7 @@ import CartoonContainer from "./CartoonContainer"
 import Header from "./Header"
 import NewForm from "./NewForm"
 import CartoonDetailPage from "./CartoonDetailPage"
+import FavoritesList from "./FavoritesList"
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [cartoons, setCartoons] = useState([])
   const [search, setSearch] = useState("")
   const [eraSelect, setEraSelect] = useState("all")
+  const [favorites, setFavorites] = useState([])
 
 
 
@@ -53,10 +55,12 @@ function handleDeleteCartoon(id){
 }
 
 function addCartoon(newCartoon){
-  const updatedCartoons = [...cartoons, newCartoon]
-  setCartoons(updatedCartoons)
+  setCartoons([...cartoons, newCartoon])
 }
 
+function addFavorite(newFav){
+  setFavorites([...favorites, newFavorite])
+}
 
   // console.log(user)
   return (
@@ -70,9 +74,11 @@ function addCartoon(newCartoon){
 
         <Route exact path="/cartoons">
           <CartoonContainer 
-          filteredCartoons ={filteredCartoons} 
-          oldCartoonList={cartoons} 
-          handleDeleteCartoon={handleDeleteCartoon}/> 
+            filteredCartoons ={filteredCartoons} 
+            oldCartoonList={cartoons} 
+            handleDeleteCartoon={handleDeleteCartoon}
+            onAddFavorite={addFavorite}
+          /> 
           {/* <Login setUser={setUser}/> */}
         </Route>
 
@@ -87,6 +93,10 @@ function addCartoon(newCartoon){
 
         <Route path ="/cartoons/:id" >
           <CartoonDetailPage />
+        </Route>
+
+        <Route path ="/favorites" >
+          <FavoritesList favs={favorites} />
         </Route>
 
       </Switch>
