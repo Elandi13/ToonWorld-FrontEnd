@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from "react"
 import { Route, Switch } from "react-router";
-// import Login from "./Login"
+import Login from "./Login"
 import CartoonContainer from "./CartoonContainer"
 import Header from "./Header"
 import NewForm from "./NewForm"
+import CartoonDetailPage from "./CartoonDetailPage"
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   const [cartoons, setCartoons] = useState([])
   const [search, setSearch] = useState("")
   const [eraSelect, setEraSelect] = useState("all")
+
 
 
   useEffect(()=> {
@@ -66,7 +68,7 @@ function addCartoon(newCartoon){
       onEraSelect ={handleEraSelect} />
       <Switch>
 
-        <Route path="/cartoons">
+        <Route exact path="/cartoons">
           <CartoonContainer 
           filteredCartoons ={filteredCartoons} 
           oldCartoonList={cartoons} 
@@ -74,9 +76,17 @@ function addCartoon(newCartoon){
           {/* <Login setUser={setUser}/> */}
         </Route>
 
-        <Route path = "/new_cartoon">
+        <Route path = "/form">
           <NewForm 
           onAddCartoon ={addCartoon}/> 
+        </Route>
+
+        <Route path ="/login"> 
+          <Login/>
+        </Route>
+
+        <Route path ="/cartoons/:id" >
+          <CartoonDetailPage />
         </Route>
 
       </Switch>

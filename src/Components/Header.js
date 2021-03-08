@@ -56,7 +56,7 @@ function Header({user, cartoons, onHandleSearchChange, onEraSelect}) {
                 <Link to ="/favorites"> Favorites </Link>
 
                 <li>
-                    <button> Form Redirect</button>
+                    <Link to = "/form"> Form Redirect </Link>
                 </li>
                 
             </ul>
