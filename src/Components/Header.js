@@ -2,16 +2,37 @@ import React, { useState } from "react"
 import {Link} from "react-router-dom"
 
 
-function Header({cartoons, onHandleSearchChange, onEraSelect}) {
+function Header({user, cartoons, onHandleSearchChange, onEraSelect}) {
     return(
-        <div className = "header-container">
-            <ul className = "Navbar">
-                <li className = "Navbar-item item-logo" >
-                    <Link to = "/home" className = "logo-home">
-                        <img className = "logo-image" src = "https://media.philstar.com/photos/2020/08/19/bugs_2020-08-19_15-49-01.jpg" alt = "logo" height = "100vh" weight = "100vw" />
-                    </Link> 
-                </li>
+     <header>
+         {/* <div>  */}
+            <Link to = "/cartoons"> 
+                <img className = "logo-image" src = "https://media.philstar.com/photos/2020/08/19/bugs_2020-08-19_15-49-01.jpg" alt = "logo" height = "100vh" weight = "100vw" />
+            </Link> 
+         {/* </div> */}
+         {/* <div>  */}
+             {/* {user ? (
+                 <>
+                 <Link to = "/home"> 
+                 <img className = "logo-image" src = "https://media.philstar.com/photos/2020/08/19/bugs_2020-08-19_15-49-01.jpg" alt = "logo" height = "100vh" weight = "100vw" />
+                 </Link> 
+                 <Link to ="/create"> AddClip</Link> 
+                 <button> Logout </button>
+                 </>
+             ) : (
+                 <>
+                <Link to="/login"> Login </Link> 
+                 </>
+             )} */}
+             {/* <br></br> */}
+             {/* <Link to ="/create"> AddClip</Link> */}
 
+         {/* </div> */}
+
+        <div className = "header-container">
+
+            <ul className = "Navbar">
+                
                 <li className = "Navbar-item item-filter">
                 <label htmlFor="value"> Era:</label>
                     <select name = "era" onChange={onEraSelect} > 
@@ -28,16 +49,19 @@ function Header({cartoons, onHandleSearchChange, onEraSelect}) {
                 
                 </li>
 
-                <li className = "Navbar-item item-favorites">
-                    <button> favorites</button>
-                </li>
+                
+                <Link to ="/login"> Login </Link>
+                <br> 
+                </br>
+                <Link to ="/favorites"> Favorites </Link>
 
                 <li>
                     <button> Form Redirect</button>
                 </li>
-
+                
             </ul>
         </div>
+    </header>
     )
 }
 

@@ -1,6 +1,6 @@
 import React from "react"
 // import { Card } from "semantic-ui-react";
-
+import {Link} from "react-router-dom"
 function CartoonCard({cartoonInfo, handleDeleteCartoon, oldCartoonList}) {
     const{id, tv_show, title, year, episode, description, clip, image, era} = cartoonInfo
     // console.log(id)
@@ -18,9 +18,11 @@ function handleClipDelete(){
     return(
         <ul>
             <div className="cartoon_card" height="100vh" width="100vh"> 
-                    <img src={image} alt ="cartoon-image" height = "100%" width = "100%" />
+                    <Link to="details">
+                        <img src={image} alt ="cartoon-image" height = "100%" width = "100%" />
+                    </Link>
                     <button className="delete-button" onClick={handleClipDelete} >🗑</button>
-                    
+                    <button  className ="like-button" > ❤️ </button>
             </div>
         </ul>
         // <CartoonCardPage {car}/>
