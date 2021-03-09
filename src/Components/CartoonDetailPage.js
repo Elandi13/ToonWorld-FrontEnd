@@ -19,10 +19,26 @@ function CartoonDetailPage(){
     },[id])
 
     // console.log(id)
-    console.log(cartoon)
+    // console.log(cartoon)
     return (
-        <div>
-            {cartoon.title}
+        <div> 
+            <h1>
+                Episode: {cartoon.episode} - {cartoon.title} 
+            </h1>
+            
+            <iframe width="650" height="315" src={cartoon.clip} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+             <ul> 
+                 <h2>
+                    Original Date Aired: {cartoon.year}
+                 </h2>
+
+                <br></br>
+
+             {cartoon.description} 
+            </ul>
+
+
         </div>
     )
 }
@@ -31,7 +47,7 @@ function CartoonDetailPage(){
 
 
 
-
+// https://www.youtube.com/embed/P1K2rSvcQs0
 
 
 

@@ -1,10 +1,15 @@
 import React, {useState} from "react"
+import {useHistory} from "react-router-dom"
 
 function Login({setUser}) {
     const[loginFormData, setLoginFormData] = useState({
         username: "",
         password: ""
     })
+
+    const history = useHistory()
+
+
     function handleChange(e){
         setLoginFormData({...loginFormData, [e.target.name]: e.target.value})
     }
@@ -18,6 +23,7 @@ function Login({setUser}) {
         .then((user) => {
             // console.log(user)
             setUser(user)
+            history.push("/")
         })
 
     }

@@ -6,6 +6,7 @@ import Header from "./Header"
 import NewForm from "./NewForm"
 import CartoonDetailPage from "./CartoonDetailPage"
 import FavoritesList from "./FavoritesList"
+import userEvent from "@testing-library/user-event";
 
 
 function App() {
@@ -14,6 +15,20 @@ function App() {
   const [search, setSearch] = useState("")
   const [eraSelect, setEraSelect] = useState("all")
   const [favorites, setFavorites] = useState([])
+  // const [favCartoons, setFavCartoons] = useState([])
+
+// console.log(user)
+
+  useEffect(()=>{
+    const token = null
+    if(token){
+      fetch(`http://localhost:3000/me`)
+      .then((response) => response.json())
+      .then(userData => {
+        setUser(userData)
+      })
+    }
+  },[])
 
 
 
@@ -21,6 +36,13 @@ function App() {
     fetch(`http://localhost:3000/cartoons`)
     .then(response => response.json())
     .then((cartoonArray) => setCartoons(cartoonArray))
+}, [])
+
+
+useEffect(()=> {
+  fetch(`http://localhost:3000/user_cartoons`)
+  .then(response => response.json())
+  .then((favArr) => setFavorites(favArr))
 }, [])
 
 function handleSearchChange(event){
@@ -59,27 +81,29 @@ function addCartoon(newCartoon){
 }
 
 function addFavorite(newFav){
-  setFavorites([...favorites, newFavorite])
+  // console.log(newFav)
+  setFavorites(newFav)
 }
 
   // console.log(user)
   return (
     <div>
+
       <Header 
       user ={user} 
       cartoons={filteredCartoons} 
       onHandleSearchChange={handleSearchChange} 
       onEraSelect ={handleEraSelect} />
-      <Switch>
 
-        <Route exact path="/cartoons">
+      <Switch>
+        <Route exact path="/">
           <CartoonContainer 
             filteredCartoons ={filteredCartoons} 
             oldCartoonList={cartoons} 
+            favorites={favorites}
             handleDeleteCartoon={handleDeleteCartoon}
             onAddFavorite={addFavorite}
           /> 
-          {/* <Login setUser={setUser}/> */}
         </Route>
 
         <Route path = "/form">
@@ -88,7 +112,7 @@ function addFavorite(newFav){
         </Route>
 
         <Route path ="/login"> 
-          <Login/>
+          <Login setUser ={setUser}/>
         </Route>
 
         <Route path ="/cartoons/:id" >
@@ -96,7 +120,7 @@ function addFavorite(newFav){
         </Route>
 
         <Route path ="/favorites" >
-          <FavoritesList favs={favorites} />
+          <FavoritesList favorites={favorites}/>
         </Route>
 
       </Switch>

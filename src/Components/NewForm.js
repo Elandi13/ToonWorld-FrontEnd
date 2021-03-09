@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-
+import {useHistory} from "react-router-dom"
 function NewForm({onAddCartoon}) {
+    const history = useHistory()
     const[formData, setFormData] = useState({
         tv_show: "", 
         title: "", 
@@ -40,6 +41,7 @@ function NewForm({onAddCartoon}) {
             })
         .then(response => response.json())
         .then(onAddCartoon) 
+        history.push("/")
     }
 
     return(

@@ -1,18 +1,15 @@
 import React from "react"
-import Favorite from "./Favorite"
+import FavoriteCard from "./FavoriteCard"
 
-function FavoritesList({favs}){
+function FavoritesList({favorites}){
 
-    const allFavorites = favs.map((fav) => {
-        return {
-            if (fav.cartoon_id === )
-        }
+    const allFavorites = favorites.map((fav) => {
+        return <FavoriteCard key={fav.id} fav={fav} />
     })
-
     return (
         <div>
             <h4>
-                Favorites List
+                {allFavorites}
             </h4>
         </div>
     )
