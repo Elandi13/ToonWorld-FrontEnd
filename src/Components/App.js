@@ -39,51 +39,59 @@ function App() {
     fetch(`http://localhost:3000/cartoons`)
     .then(response => response.json())
     .then((cartoonArray) => setCartoons(cartoonArray))
-}, [])
+  }, [])
 
 
-useEffect(()=> {
-  fetch(`http://localhost:3000/user_cartoons`)
-  .then(response => response.json())
-  .then((favArr) => setFavorites(favArr))
-}, [])
+  useEffect(()=> {
+    fetch(`http://localhost:3000/user_cartoons`)
+    .then(response => response.json())
+    .then((favArr) => setFavorites(favArr))
+  }, [])
 
-function handleSearchChange(event){
-  console.log(event.target.value)
-  setSearch(event.target.value)
-}
-
-
-// const filteredEra = cartoons.filter((cartoon) => {
-  // return cartoon.era === eraSelect
-  // if (eraSelect === "all") {
-  //     return cartoon.era === eraSelect
-  // } else if (eraSelect === "1990s"){
-  //     return cartoon.era ===eraSelect
-  // }
-// })
+// function handleSearchChange(event){
+//   console.log(event.target.value)
+//   setSearch(event.target.value)
+// }
 
 
-const filteredCartoons = cartoons.filter((cartoon) => {
-  return cartoon.description.includes(search)
-})
+  const filteredEra = cartoons.filter((cartoon) => {
+    if (eraSelect === "all") {
+      return cartoons
+    } else if (eraSelect === "1990s") {
+      return cartoon.era === "1990s"
+    } else if (eraSelect === "2000s") {
+      return cartoon.era === "2000s"
+    } else if (eraSelect === "2010s") {
+      return cartoon.era === "2010s"
+    }
+  });
 
 
-function handleEraSelect(event){
-  setEraSelect(event.target.value) 
-  // console.log(cartoons)
-}
+  const filteredCartoons = filteredEra.filter((cartoon) => {
+    return cartoon.description.includes(search)
+  })
 
 
-function addCartoon(newCartoon){
-  setCartoons([...cartoons, newCartoon])
-}
+  function handleEraSelect(event){
+    setEraSelect(event.target.value) 
+    // console.log(cartoons)
+  }
 
-function addFavorite(newFav){
-  // console.log(newFav)
-  setFavorites([...favorites, newFav])
-  history.push("/favorites")
-}
+
+  function addCartoon(newCartoon){
+    setCartoons([...cartoons, newCartoon])
+  }
+
+  function addFavorite(newFav){
+    // console.log(newFav)
+    setFavorites([...favorites, newFav])
+    history.push("/favorites")
+  }
+
+  function handleSearchChange(event){
+    console.log(event.target.value)
+    setSearch(event.target.value)
+  }
 
   // console.log(user)
   return (
@@ -96,6 +104,7 @@ function addFavorite(newFav){
 
   
       <Filter 
+        search={search}
         onSearch={handleSearchChange}
         onEraSelect={handleEraSelect}
         cartoons={filteredCartoons}

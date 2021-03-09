@@ -3,6 +3,7 @@ import FavoriteCard from "./FavoriteCard"
 
 function FavoritesList({favorites, setFavorites}){
 
+    
     const allFavorites = favorites.map((fav) => {
         return <FavoriteCard key={fav.id} fav={fav} favDeleteRequest={favDeleteRequest} />
     })

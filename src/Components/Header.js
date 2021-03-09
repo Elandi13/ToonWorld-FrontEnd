@@ -3,6 +3,8 @@ import {Link} from "react-router-dom"
 import styled from 'styled-components'
 
 
+
+
 function Header({user}) {
     const HeaderLayout = styled.div`
     padding: 25px;
@@ -22,6 +24,7 @@ function Header({user}) {
 
     const StyledLink = styled(Link)`
         font-size: 2rem;
+        margin: 10px;
     `
     return(
         <HeaderLayout>
@@ -32,15 +35,15 @@ function Header({user}) {
             </Logo> 
                 {user ? (
                         <>
-                    <ControlButton>  <StyledLink to ="/form"> AddClip</StyledLink>  </ControlButton>
+                    <ControlButton className='navBarLink'>  <StyledLink to ="/form"> AddClip</StyledLink>  </ControlButton>
                     
-                    <ControlButton> <StyledLink to ="/favorites"> Favorites </StyledLink> </ControlButton>
+                    <ControlButton className='navBarLink'> <StyledLink to ="/favorites"> Favorites </StyledLink> </ControlButton>
 
-                    <ControlButton> <button> Logout </button> </ControlButton>
+                    <ControlButton className='navBarLink'> <StyledLink> Logout </StyledLink> </ControlButton>
                         </>
                 ) : (
                         <>
-                    <ControlButton><Link to="/login"> Login </Link> </ControlButton>
+                    <ControlButton className='navBarLink'><StyledLink to="/login"> Login </StyledLink> </ControlButton>
                         </>
                 )} 
         </HeaderLayout>

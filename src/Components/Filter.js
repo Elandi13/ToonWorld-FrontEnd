@@ -1,7 +1,8 @@
-import React from "react"
+import React, {useState} from "react"
 import styled from 'styled-components'
 
-function Filter({onSearch, onEraSelect}){
+function Filter({search, onSearch, onEraSelect}){
+    
 
     const FilterLayout = styled.div`
         padding: 25px;
@@ -9,13 +10,16 @@ function Filter({onSearch, onEraSelect}){
         grid-template-columns: 300px auto 300px;
         background-color: green;
         color: white;
-        
         `
 
+    
+
+    console.log(search)
+
     return(
-        <FilterLayout>
+        <div>
             <div>
-                <input type = "text" placeholder = "Search..." onChange={onSearch}/>
+                <input name="search" value={search} placeholder = "Search..." onChange={onSearch}/>
                 {/* <button className = "search-button"> 🔍 </button> */}
             </div>
 
@@ -29,7 +33,7 @@ function Filter({onSearch, onEraSelect}){
                 </select>
             </div>
 
-        </FilterLayout>
+        </div>
     )
 }
 
