@@ -2,15 +2,19 @@ import React from "react"
 import CartoonCard from "./CartoonCard"
 import { Card } from "semantic-ui-react";
 
-function CartoonContainer({filteredCartoons, handleDeleteCartoon, onAddFavorite, favorites}) {
+function CartoonContainer({filteredCartoons, onAddFavorite, favorites}) {
     const cartoonList = filteredCartoons.map((cartoon)=>{
-        return <CartoonCard 
-            key={cartoon.id} 
-            cartoonInfo={cartoon}
-            handleDeleteCartoon={handleDeleteCartoon}
-            onAddFavorite={onAddFavorite}
-            favorites={favorites}
-        />
+        return (
+            <Card>
+                <CartoonCard 
+                    key={cartoon.id} 
+                    cartoonInfo={cartoon}
+                    onAddFavorite={onAddFavorite}
+                    favorites={favorites}
+                />
+            </Card>    
+                
+        )
     })
     return(
         

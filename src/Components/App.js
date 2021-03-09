@@ -4,9 +4,11 @@ import Login from "./Login"
 import CartoonContainer from "./CartoonContainer"
 import Header from "./Header"
 import NewForm from "./NewForm"
+import Filter from "./Filter"
 import CartoonDetailPage from "./CartoonDetailPage"
 import FavoritesList from "./FavoritesList"
-import userEvent from "@testing-library/user-event";
+// import userEvent from "@testing-library/user-event";
+import {useHistory} from "react-router-dom"
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
   const [eraSelect, setEraSelect] = useState("all")
   const [favorites, setFavorites] = useState([])
   // const [favCartoons, setFavCartoons] = useState([])
+  const history = useHistory()
 
 // console.log(user)
 
@@ -46,6 +49,7 @@ useEffect(()=> {
 }, [])
 
 function handleSearchChange(event){
+  console.log(event.target.value)
   setSearch(event.target.value)
 }
 
@@ -71,18 +75,14 @@ function handleEraSelect(event){
 }
 
 
-function handleDeleteCartoon(id){
-  const updatedClips = cartoons.filter(cartoon => cartoon.id !== id)
-  setCartoons(updatedClips)
-}
-
 function addCartoon(newCartoon){
   setCartoons([...cartoons, newCartoon])
 }
 
 function addFavorite(newFav){
   // console.log(newFav)
-  setFavorites(newFav)
+  setFavorites([...favorites, newFav])
+  history.push("/favorites")
 }
 
   // console.log(user)
@@ -90,10 +90,17 @@ function addFavorite(newFav){
     <div>
 
       <Header 
-      user ={user} 
-      cartoons={filteredCartoons} 
-      onHandleSearchChange={handleSearchChange} 
-      onEraSelect ={handleEraSelect} />
+        user ={user} 
+      // cartoons={filteredCartoons} 
+      />
+
+  
+      <Filter 
+        onSearch={handleSearchChange}
+        onEraSelect={handleEraSelect}
+        cartoons={filteredCartoons}
+      />
+      
 
       <Switch>
         <Route exact path="/">
@@ -101,10 +108,11 @@ function addFavorite(newFav){
             filteredCartoons ={filteredCartoons} 
             oldCartoonList={cartoons} 
             favorites={favorites}
-            handleDeleteCartoon={handleDeleteCartoon}
             onAddFavorite={addFavorite}
           /> 
         </Route>
+
+    
 
         <Route path = "/form">
           <NewForm 
@@ -120,7 +128,7 @@ function addFavorite(newFav){
         </Route>
 
         <Route path ="/favorites" >
-          <FavoritesList favorites={favorites}/>
+          <FavoritesList favorites={favorites} setFavorites={setFavorites}/>
         </Route>
 
       </Switch>
@@ -130,7 +138,3 @@ function addFavorite(newFav){
  }
 export default App;
       
-// app 
-//Navbar / cartoonContainer  
-//Login 
-//CartoonContainer but with login features such as create/fav 

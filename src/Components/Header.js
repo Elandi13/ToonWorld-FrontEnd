@@ -1,13 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import {Link} from "react-router-dom"
 import styled from 'styled-components'
 
 
-function Header({user, cartoons, onHandleSearchChange, onEraSelect}) {
+function Header({user}) {
     const HeaderLayout = styled.div`
     padding: 25px;
     display: grid;
-    grid-template-columns: auto 100px 100px 100px 100px;
+    grid-template-columns: auto 100px 100px 100px;
     background-color: #7542f5;
     color: white;
     
@@ -17,6 +17,7 @@ function Header({user, cartoons, onHandleSearchChange, onEraSelect}) {
 
     const ControlButton = styled.div`
         place-content: center;
+        padding: 25px;
     `
 
     const StyledLink = styled(Link)`

@@ -4,6 +4,15 @@
   pointer-events: none;
 }
 
+body {
+  background-image: url("https://www.seekpng.com/png/small/25-256258_free-old-television-set-png-retro-tv-no.png");
+}
+
+.cartoon-car{
+  height: 20vh;
+  width: 20vw;
+}
+
 /* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

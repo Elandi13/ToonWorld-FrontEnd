@@ -1,24 +1,15 @@
-import userEvent from "@testing-library/user-event"
+// import userEvent from "@testing-library/user-event"
 import React from "react"
 // import { Card } from "semantic-ui-react";
-import {NavLink} from "react-router-dom"
-import NewForm from "./NewForm"
+import {Link} from "react-router-dom"
+
 // import CartoonDetailPage from "./CartoonDetailPage"
 
 
-function CartoonCard({cartoonInfo, handleDeleteCartoon, onAddFavorite, favorites}) {
-    const{id, tv_show, title, year, episode, description, clip, image, era} = cartoonInfo
+function CartoonCard({cartoonInfo, onAddFavorite}) {
+    const{id, tv_show, image} = cartoonInfo
     // console.log(id)
 
-
-function handleClipDelete(){
-    // console.log(id)
-    fetch(`http://localhost:3000/cartoons/${id}`,{
-        method: 'DELETE',
-    })
-    .then(response => response.json())
-    .then(handleDeleteCartoon(id))
-}
 
 function handleFavClick(e){
     e.preventDefault()
@@ -36,28 +27,15 @@ function handleFavClick(e){
 }
     
     return(
-         <div className="cartoon_card" height="100vh" width="100vh"> 
-             <ul> 
-                <NavLink to= {`/cartoons/${id}`} >
-                     <img src={image} alt ="cartoon-image" height = "100%" width = "100%"/>
-                 </NavLink>
-                      <h2> {tv_show} </h2>
-              <button className="delete-button" onClick={handleClipDelete} >🗑</button>
-              <button  className ="like-button" onClick={handleFavClick} > ❤️ </button>
-                        
-             </ul>
-          </div>
-             
-        
-        // <CartoonCardPage {car}/>
+        <div className="cartoon_card" height="100vh" width="100vh"> 
+                <Link to= {`/cartoons/${id}`} >
+                    <img src={image} alt ="cartoon-image" height = "100%" width = "100%"/>
+                </Link>
+                    <h2> {tv_show} </h2>
+              <button  className ="like-button" onClick={handleFavClick} > ❤️ </button>       
+        </div>
     )
 }
 
 export default CartoonCard;
 
-///child of CartoonContainer
-
-
-///use this for cartoon show page
-/* <iframe position="absolute" width="100%" height="100%" src={clip}>
-</iframe> */
