@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from "react-router-dom"
+import {BrowserRouter as Router} from "react-router-dom"
 import './index.css';
-import App from './Components/App';
+import './App.css'
+import App from './components/App';
 import 'semantic-ui-css/semantic.min.css'
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <Router>
     <App />,
-  </BrowserRouter>,
+  </Router>,
   document.getElementById('root')
 );
 

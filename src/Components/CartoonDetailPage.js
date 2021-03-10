@@ -26,7 +26,7 @@ function CartoonDetailPage(){
                 Episode: {cartoon.episode} - {cartoon.title} 
             </h1>
             
-            <iframe width="650" height="315" src={cartoon.clip} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="650" height="315" src={cartoon.clip} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             
              <ul> 
                  <h2>

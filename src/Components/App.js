@@ -12,24 +12,23 @@ import {useHistory} from "react-router-dom"
 
 
 function App() {
-  const [user, setUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState(null)
   const [cartoons, setCartoons] = useState([])
   const [search, setSearch] = useState("")
   const [eraSelect, setEraSelect] = useState("all")
   const [favorites, setFavorites] = useState([])
-  // const [favCartoons, setFavCartoons] = useState([])
   const history = useHistory()
+  // const [favCartoons, setFavCartoons] = useState([])
 
-// console.log(user)
-
+      
+  
   useEffect(()=>{
-    const token = true
+    const token = null
     if(token){
       fetch(`http://localhost:3000/me`)
       .then((response) => response.json())
-      .then(userData => {
-        console.log(userData)
-        // setUser(userData)
+      .then(data => {
+        setCurrentUser(data)
       })
     }
   },[])
@@ -99,7 +98,8 @@ function App() {
     <div>
 
       <Header 
-        user ={user} 
+        currentUser ={currentUser} 
+        setCurrentUser={setCurrentUser}
       // cartoons={filteredCartoons} 
       />
 
@@ -130,7 +130,7 @@ function App() {
         </Route>
 
         <Route path ="/login"> 
-          <Login setUser ={setUser}/>
+          <Login setCurrentUser ={setCurrentUser}/>
         </Route>
 
         <Route path ="/cartoons/:id" >
