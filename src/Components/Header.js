@@ -1,53 +1,84 @@
 import React from "react"
-import {Link} from "react-router-dom"
-import styled from 'styled-components'
+
+// import {Link} from "react-router-dom"
+// import styled from 'styled-components'
+import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from "./HeaderElements"
 
 
 
 
 function Header({user}) {
-    const HeaderLayout = styled.div`
-    padding: 25px;
-    display: grid;
-    grid-template-columns: auto 100px 100px 100px;
-    background-color: #7542f5;
-    color: white;
-    
-    `
-    const Logo = styled.div`
-    `
+//     const HeaderLayout = styled.div`
+//         padding: 1.0rem;
+//         display: flex;
+//         grid-template-columns: auto 100px 100px 100px;
+//         background-color: #7542f5;
+//         color: white;
+//         justify-content: space-between;
+//         z-index: 10;
+//     `
+//     const Logo = styled.div`
+//     `
 
-    const ControlButton = styled.div`
-        place-content: center;
-        padding: 25px;
-    `
+//     const ControlButton = styled.div`
+//         place-content: center;
+//         padding: 25px;
+//     `
 
-    const StyledLink = styled(Link)`
-        font-size: 2rem;
-        margin: 10px;
-    `
+//     const StyledLink = styled(Link)`
+//         font-size: 2rem;
+//         margin: 10px;
+//         color: white;
+//     `
     return(
-        <HeaderLayout>
-            <Logo>  
-                <StyledLink to = "/"> 
-                    <img className = "logo-image" src = "https://media.philstar.com/photos/2020/08/19/bugs_2020-08-19_15-49-01.jpg" alt = "logo" height = "100vh" weight = "100vw" />
-                </StyledLink> 
-            </Logo> 
-                {user ? (
-                        <>
-                    <ControlButton className='navBarLink'>  <StyledLink to ="/form"> AddClip</StyledLink>  </ControlButton>
-                    
-                    <ControlButton className='navBarLink'> <StyledLink to ="/favorites"> Favorites </StyledLink> </ControlButton>
+        <>
+            <Nav>
+                <NavLink to="/">
+                    <h1> Toon World </h1>
+                </NavLink>
+                <Bars />
+                <NavMenu>
+                    <NavLink to="/route" activeStyle>
+                        First 
+                    </NavLink>
+                    <NavLink to="/route" activeStyle>
+                        Second 
+                    </NavLink>
+                    <NavLink to="/route" activeStyle>
+                        Third 
+                    </NavLink>
+                    <NavLink to="/route" activeStyle>
+                        Fourth 
+                    </NavLink>
+                </NavMenu>
+                <NavBtn>
+                    <NavBtnLink to="/route"> Sign In </NavBtnLink>
+                </NavBtn>
+            </Nav>
+        </>
 
-                    <ControlButton className='navBarLink'> <StyledLink> Logout </StyledLink> </ControlButton>
-                        </>
-                ) : (
-                        <>
-                    <ControlButton className='navBarLink'><StyledLink to="/login"> Login </StyledLink> </ControlButton>
-                        </>
-                )} 
-        </HeaderLayout>
-    )
+        // Below was Cam's original styled component
+        // <HeaderLayout>
+        //     <Logo>  
+        //         <NavLink to = "/"> 
+        //             <img className = "logo-image" src = "https://media.philstar.com/photos/2020/08/19/bugs_2020-08-19_15-49-01.jpg" alt = "logo" height = "100vh" weight = "100vw" />
+        //         </StyledLink> 
+        //     </Logo> 
+        //         {user ? (
+        //                 <>
+        //             <ControlButton className='navBarLink'>  <StyledLink to ="/form"> AddClip</StyledLink>  </ControlButton>
+                    
+        //             <ControlButton className='navBarLink'> <StyledLink to ="/favorites"> Favorites </StyledLink> </ControlButton>
+
+        //             <ControlButton className='navBarLink'> <StyledLink> Logout </StyledLink> </ControlButton>
+        //                 </>
+        //         ) : (
+        //                 <>
+        //             <ControlButton className='navBarLink'><StyledLink to="/login"> Login </StyledLink> </ControlButton>
+        //                 </>
+        //         )} 
+        // </HeaderLayout>
+    )   // Above was the original styled component
 }
 
         {/* <div className = "header-container">
