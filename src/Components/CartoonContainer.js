@@ -5,20 +5,17 @@ import { Card } from "semantic-ui-react";
 function CartoonContainer({filteredCartoons, onAddFavorite, favorites}) {
     const cartoonList = filteredCartoons.map((cartoon)=>{
         return (
-            <Card>
                 <CartoonCard 
                     key={cartoon.id} 
                     cartoonInfo={cartoon}
                     onAddFavorite={onAddFavorite}
                     favorites={favorites}
                 />
-            </Card>    
                 
         )
     })
     return(
-        
-        <Card.Group itemsPerRow={3}>
+        <Card.Group itemsPerRow={3} centered="true">
             {cartoonList}
         </Card.Group>
     )

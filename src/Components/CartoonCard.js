@@ -1,6 +1,6 @@
 // import userEvent from "@testing-library/user-event"
 import React from "react"
-// import { Card } from "semantic-ui-react";
+import { Card, Image } from "semantic-ui-react";
 import {Link} from "react-router-dom"
 
 // import CartoonDetailPage from "./CartoonDetailPage"
@@ -27,13 +27,17 @@ function handleFavClick(e){
 }
     
     return(
-        <div className="cartoon_card" height="100vh" width="100vh"> 
+        <Card centered="true" fluid="true" >
+            
                 <Link to= {`/cartoons/${id}`} >
-                    <img src={image} alt ="cartoon-image" height = "100%" width = "100%"/>
+                    <Image src={image} />
                 </Link>
+                <Card.Content textAlign="center">
                     <h2> {tv_show} </h2>
-              <button  className ="like-button" onClick={handleFavClick} > ❤️ </button>       
-        </div>
+                </Card.Content>
+                
+                <button  className ="like-button" onClick={handleFavClick} > ❤️ </button>       
+        </Card>
     )
 }
 
