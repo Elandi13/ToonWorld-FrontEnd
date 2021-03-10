@@ -96,7 +96,7 @@ function App() {
 
   // console.log(user)
   return (
-    <div>
+    <div class="app-container">
 
       <Header 
         currentUser ={currentUser} 

@@ -24,15 +24,23 @@ function Header({currentUser, setCurrentUser}) {
 
                     {currentUser ? (
                         <> 
-                        <Link className='nav-link' to ="/form"> AddClip </Link>
+                        <div class="nav-option" id="add-clip-link">
+                            <Link className='nav-link' to ="/form"> Add a Clip </Link>
+                        </div>
                         
-                        <Link className='nav-link' to ="/favorites"> Favorites </Link>
+                        <div class="nav-option" id="favorite-link">
+                            <Link className='nav-link' to ="/favorites"> Favorites </Link>
+                        </div>
 
-                        <Link className='nav-link' onClick={()=> setCurrentUser(null)}> Logout </Link>
+                        <div class="nav-option" id="logout-link">
+                            <Link className='nav-link' onClick={()=> setCurrentUser(null)}> Logout </Link>
+                        </div>
                             </>
                          ) : ( 
                              <> 
-                        <Link className='nav-link' to="/login"> Login </Link>
+                        <div class="nav-option" id="favorite-link">
+                            <Link className='nav-link' to="/login"> Login </Link>
+                        </div>
                              </> 
                      )} 
                 

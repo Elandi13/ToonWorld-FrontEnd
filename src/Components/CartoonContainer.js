@@ -15,9 +15,9 @@ function CartoonContainer({filteredCartoons, onAddFavorite, favorites}) {
         )
     })
     return(
-        <Card.Group itemsPerRow={3} centered="true">
+        <div class="cartoon-container">
             {cartoonList}
-        </Card.Group>
+        </div>
     )
 }
 

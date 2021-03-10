@@ -17,13 +17,13 @@ function Filter({search, onSearch, onEraSelect}){
     // console.log(search)
 
     return(
-        <div>
-            <div>
+        <div class="filter-container">
+            <div class="search-bar">
                 <input name="search" value={search} placeholder = "Search..." onChange={onSearch}/>
                 {/* <button className = "search-button"> 🔍 </button> */}
             </div>
 
-            <div className="era-dropdown">
+            <div class="era-dropdown">
                 <label htmlFor="value"> Era:</label>
                 <select name = "era" onChange={onEraSelect} > 
                     <option value= "all" > All </option>

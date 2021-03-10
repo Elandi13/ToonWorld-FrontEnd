@@ -28,17 +28,16 @@ function CartoonCard({cartoonInfo, onAddFavorite}) {
     }
     
     return(
-        <Card centered="true" fluid="true" >
+        <div class="cartoon-card">
             
                 <Link to= {`/cartoons/${id}`} >
-                    <img id={id} src={image} />
+                    <img id={id} src={image} alt={tv_show}/>
                 </Link>
-                <Card.Content textAlign="center">
+                <div class="card-content">
                     <h2> {tv_show} </h2>
-                </Card.Content>
-                
-                <button  className ="like-button" onClick={handleFavClick} > ❤️ </button>       
-        </Card>
+                    <button  className ="like-button" onClick={handleFavClick} > ❤️ </button>      
+                </div> 
+        </div>
     )
 }
 
