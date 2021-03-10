@@ -8,7 +8,7 @@ function Login({ setCurrentUser}) {
     })
     
     const history = useHistory()
-    // const[errors, setErrors] = useState([])
+
 
 
     function handleChange(e){
@@ -49,12 +49,7 @@ function Login({ setCurrentUser}) {
                 value={loginFormData.password}
                 onChange={handleChange}
                 autoComplete="current-password"
-                /> 
-                {/* {errors.map((error)=> (
-                    <p key={error} style={{color: "red"}}> 
-                    {error}
-                    </p>
-                ))} */}
+                />
                 <input type="submit" value="Login" />
             </form>
     </div>
@@ -62,19 +57,3 @@ function Login({ setCurrentUser}) {
 }
 
 export default Login;
-//     .then((response) => {
-//         if(response.ok) {
-//           return response.json()
-//         } else {
-//             return response.json().then((data) => {
-//                 throw data
-//             })
-//         }
-//     })
-//     .then((userData) => {
-//         setUser(userData)
-//         history.push("/")
-//     })
-//     .catch((userData) => {
-//         setErrors(userData.errors)
-    // })

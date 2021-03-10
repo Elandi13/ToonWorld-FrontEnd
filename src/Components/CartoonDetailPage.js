@@ -43,20 +43,4 @@ function CartoonDetailPage(){
     )
 }
 
-
-
-
-
-// https://www.youtube.com/embed/P1K2rSvcQs0
-
-
-
-
-
-
-
-
-
-
-
 export default CartoonDetailPage

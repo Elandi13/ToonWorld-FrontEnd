@@ -23,9 +23,3 @@ function CartoonContainer({filteredCartoons, onAddFavorite, favorites}) {
 
 export default CartoonContainer;
 
-///child of MainPage
-/// parent of CartoonCard
-
-//let filteredGames = games.filter(game => game.title.toLowerCase().includes(search.toLowerCase()))
-// if (filter !== "all") {
-//     filteredGames = filteredGames.filter(game => game.genre === filter)

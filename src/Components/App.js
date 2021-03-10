@@ -7,6 +7,7 @@ import NewForm from "./NewForm"
 import Filter from "./Filter"
 import CartoonDetailPage from "./CartoonDetailPage"
 import FavoritesList from "./FavoritesList"
+import '../App.css';
 // import userEvent from "@testing-library/user-event";
 import {useHistory} from "react-router-dom"
 
