@@ -19,6 +19,7 @@ function App() {
   const [eraSelect, setEraSelect] = useState("all")
   const [favorites, setFavorites] = useState([])
   const history = useHistory()
+  const [hideFilter, setHideFilter] = useState(false)
   // const [favCartoons, setFavCartoons] = useState([])
 
       
@@ -94,6 +95,7 @@ function App() {
     setSearch(event.target.value)
   }
 
+
   // console.log(user)
   return (
     <div class="app-container">
@@ -103,18 +105,17 @@ function App() {
         setCurrentUser={setCurrentUser}
       // cartoons={filteredCartoons} 
       />
-
-  
-      <Filter 
-        search={search}
-        onSearch={handleSearchChange}
-        onEraSelect={handleEraSelect}
-        cartoons={filteredCartoons}
-      />
       
 
       <Switch>
         <Route exact path="/">
+          <Filter 
+            search={search}
+            onSearch={handleSearchChange}
+            onEraSelect={handleEraSelect}
+            cartoons={filteredCartoons}
+            hideFilter = {hideFilter}
+          />
           <CartoonContainer 
             filteredCartoons ={filteredCartoons} 
             oldCartoonList={cartoons} 
@@ -139,6 +140,13 @@ function App() {
         </Route>
 
         <Route path ="/favorites" >
+          <Filter 
+            search={search}
+            onSearch={handleSearchChange}
+            onEraSelect={handleEraSelect}
+            cartoons={filteredCartoons}
+            hideFilter = {hideFilter}
+          />
           <FavoritesList favorites={favorites} setFavorites={setFavorites}/>
         </Route>
 

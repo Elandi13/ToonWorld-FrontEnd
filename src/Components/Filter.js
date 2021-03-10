@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import styled from 'styled-components'
 
-function Filter({search, onSearch, onEraSelect}){
+function Filter({search, onSearch, onEraSelect, hideFilter}){
     
 
     // const FilterLayout = styled.div`
@@ -20,9 +20,8 @@ function Filter({search, onSearch, onEraSelect}){
         <div class="filter-container">
             <div class="search-bar">
                 <input name="search" value={search} placeholder = "Search..." onChange={onSearch}/>
-                {/* <button className = "search-button"> 🔍 </button> */}
             </div>
-
+    
             <div class="era-dropdown">
                 <label htmlFor="value"> Era:</label>
                 <select name = "era" onChange={onEraSelect} > 
@@ -31,8 +30,7 @@ function Filter({search, onSearch, onEraSelect}){
                     <option value="2000s" > 2000's </option>
                     <option value="2010s" > 2010's </option>
                 </select>
-            </div>
-
+            </div>      
         </div>
     )
 }
