@@ -35,21 +35,23 @@ function Header({user}) {
             <Nav>
                 <NavLink to="/">
                     <h1> Toon World </h1>
+                    {/* <img className = "logo-image" src = "https://media.philstar.com/photos/2020/08/19/bugs_2020-08-19_15-49-01.jpg" alt = "logo" height = "100vh" weight = "100vw" /> */}
                 </NavLink>
                 <Bars />
                 <NavMenu>
-                    <NavLink to="/route" activeStyle>
-                        First 
-                    </NavLink>
-                    <NavLink to="/route" activeStyle>
-                        Second 
-                    </NavLink>
-                    <NavLink to="/route" activeStyle>
-                        Third 
-                    </NavLink>
-                    <NavLink to="/route" activeStyle>
-                        Fourth 
-                    </NavLink>
+                    {user ? (
+                            <>
+                        <NavLink className='navBarLink' to ="/form"> AddClip </NavLink>
+                        
+                        <NavLink className='navBarLink' to ="/favorites"> Favorites </NavLink>
+
+                        <NavLink className='navBarLink'> Logout </NavLink>
+                            </>
+                    ) : (
+                            <>
+                        <NavLink className='navBarLink' to="/login"> Login </NavLink>
+                            </>
+                    )}
                 </NavMenu>
                 <NavBtn>
                     <NavBtnLink to="/route"> Sign In </NavBtnLink>
@@ -66,15 +68,15 @@ function Header({user}) {
         //     </Logo> 
         //         {user ? (
         //                 <>
-        //             <ControlButton className='navBarLink'>  <StyledLink to ="/form"> AddClip</StyledLink>  </ControlButton>
+        //             <NavLink className='navBarLink'>  <StyledLink to ="/form"> AddClip</StyledLink>  </NavLink>
                     
-        //             <ControlButton className='navBarLink'> <StyledLink to ="/favorites"> Favorites </StyledLink> </ControlButton>
+        //             <NavLink className='navBarLink'> <StyledLink to ="/favorites"> Favorites </StyledLink> </NavLink>
 
-        //             <ControlButton className='navBarLink'> <StyledLink> Logout </StyledLink> </ControlButton>
+        //             <NavLink className='navBarLink'> <StyledLink> Logout </StyledLink> </NavLink>
         //                 </>
         //         ) : (
         //                 <>
-        //             <ControlButton className='navBarLink'><StyledLink to="/login"> Login </StyledLink> </ControlButton>
+        //             <NavLink className='navBarLink'><StyledLink to="/login"> Login </StyledLink> </NavLink>
         //                 </>
         //         )} 
         // </HeaderLayout>

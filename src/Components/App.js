@@ -23,12 +23,13 @@ function App() {
 // console.log(user)
 
   useEffect(()=>{
-    const token = null
+    const token = true
     if(token){
       fetch(`http://localhost:3000/me`)
       .then((response) => response.json())
       .then(userData => {
-        setUser(userData)
+        console.log(userData)
+        // setUser(userData)
       })
     }
   },[])

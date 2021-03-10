@@ -20,9 +20,9 @@ function Login({setUser}) {
             method: "POST",
         })
         .then((response) => response.json())
-        .then((user) => {
-            // console.log(user)
-            setUser(user)
+        .then((userData) => {
+            // setUser(userData)
+            console.log(userData)
             history.push("/")
         })
 
