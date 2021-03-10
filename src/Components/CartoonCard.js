@@ -31,7 +31,7 @@ function CartoonCard({cartoonInfo, onAddFavorite}) {
         <div class="cartoon-card">
             
                 <Link to= {`/cartoons/${id}`} >
-                    <img id={id} src={image} alt={tv_show}/>
+                    <img id={id} src={image} alt={tv_show} class="card-image"/>
                 </Link>
                 <div class="card-content">
                     <h2> {tv_show} </h2>
