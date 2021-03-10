@@ -34,7 +34,7 @@ function Header({user}) {
         <>
             <Nav>
                 <NavLink to="/">
-                    <h1> Toon World </h1>
+                    <h1> Toon Worldy </h1>
                     {/* <img className = "logo-image" src = "https://media.philstar.com/photos/2020/08/19/bugs_2020-08-19_15-49-01.jpg" alt = "logo" height = "100vh" weight = "100vw" /> */}
                 </NavLink>
                 <Bars />
