@@ -23,10 +23,10 @@ function FavoritesList({favorites, setFavorites}){
 
 
     return (
-        <div>
-            <h4>
+        <div class="div-to-scroll">
+            <div class="div-with-scroll">
                 {allFavorites}
-            </h4>
+            </div>
         </div>
     )
 }

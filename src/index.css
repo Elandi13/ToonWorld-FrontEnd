@@ -8,18 +8,16 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgb(83, 21, 197);
+  /* border-bottom: 4px solid rgb(8, 23, 245); */
   /* background-color: rgb(0, 0, 0); */
-  background-image: linear-gradient(to bottom, #3399ff 1%, #ccccff 102%);
-  background: linear-gradient(to top,  0%,  59%);
+  /* background-image: linear-gradient(to bottom, #3399ff 1%, #ccccff 102%); */
+  background: linear-gradient(to bottom, #0066ff 0%, white 102%);
 }
 
 header a,
 header button {
   font-size: 1rem;
   display: inline-block;
-  background-color: #130d00;
-  border: 1px solid rgb(235, 13, 13);
   margin: 1rem;
   padding: 1rem;
   text-decoration: none;

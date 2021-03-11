@@ -10,9 +10,9 @@ function CartoonContainer({filteredCartoons, onAddFavorite, favorites}) {
                     onAddFavorite={onAddFavorite}
                     favorites={favorites}
                 />
-                
         )
     })
+
     return(
         <div class="cartoon-container">
             {cartoonList}

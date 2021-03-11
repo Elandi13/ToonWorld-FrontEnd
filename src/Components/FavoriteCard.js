@@ -9,28 +9,24 @@ function FavoriteCard({fav, favDeleteRequest}){
   }
 
   return (
-    <div> 
-      <div> 
-          <h1> Welcome To Your Personal Favs</h1>
-      <h1>
-          Episode: {fav.cartoon.episode} - {fav.cartoon.title} 
-      </h1>
-      
-        <iframe title={fav.cartoon.title} width="650" height="315" src={fav.cartoon.clip} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>
-    
-      <ul> 
-        <h2>
-          Original Date Aired: {fav.cartoon.year}
+    <div class="favorite-container"> 
+        <div class="favorite-card">
+          <h1 class="fav-title">
+            {fav.cartoon.title} 
+          </h1>
+
+          <iframe title={fav.cartoon.title} width="650" height="315" src={fav.cartoon.clip} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>
+          <h3>
+            Episode: {fav.cartoon.episode} 
+          </h3>
+          <h2>
+            Original Date Aired: {fav.cartoon.year}
+          </h2>
           <button className="delete-button" onClick={removeCartoon} >🗑</button>
-        </h2>
-
-        <br></br>
-
-        {fav.cartoon.description} 
-      </ul>
-
-      </div>
-
+          <h4 class="fav-description">
+            {fav.cartoon.description} 
+          </h4>
+        </div>
     </div>
   )
 }

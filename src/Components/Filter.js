@@ -2,14 +2,11 @@ import React from "react"
 // import styled from 'styled-components'
 
 function Filter({search, onSearch, onEraSelect}){
-    
-
-
 
     return(
         <div class="filter-container">
             <div class="search-bar">
-                <input name="search" value={search} placeholder = "Search..." onChange={onSearch}/>
+                <input class="search-input" name="search" value={search} placeholder = "Search..." onChange={onSearch}/>
             </div>
     
             <div class="era-dropdown">

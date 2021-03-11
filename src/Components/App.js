@@ -37,7 +37,7 @@ function App() {
     .then((cartoonArray) => setCartoons(cartoonArray))
   }, [])
 
-  
+
   useEffect(()=> {
     fetch(`http://localhost:3000/user_cartoons`)
     .then(response => response.json())
@@ -81,6 +81,7 @@ function App() {
     console.log(event.target.value)
     setSearch(event.target.value)
   }
+
 
 
 
