@@ -19,9 +19,6 @@ function App() {
   const [favorites, setFavorites] = useState([])
   const history = useHistory()
   
-
-
-      
   
   useEffect(()=>{
     const token = null
@@ -34,15 +31,13 @@ function App() {
     }
   },[])
 
-
-
   useEffect(()=> {
     fetch(`http://localhost:3000/cartoons`)
     .then(response => response.json())
     .then((cartoonArray) => setCartoons(cartoonArray))
   }, [])
 
-
+  
   useEffect(()=> {
     fetch(`http://localhost:3000/user_cartoons`)
     .then(response => response.json())

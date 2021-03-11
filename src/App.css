@@ -74,5 +74,40 @@
 }
 
 #root{
-  background-image: linear-gradient(to bottom, #0066ff  1%, #9999ff 102%);
+  background: linear-gradient(to top, #3399ff 0%, #ccccff 59%);
+}
+
+.detail-box {
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 85vh;
+  width: 50vw;
+  background-color: rgb(250, 246, 250);
+  border-radius: 50px;
+  outline: black;
+  border: solid;
+  box-shadow: 5px 10px;
+  
+}
+
+.detail-container{
+  background: url("https://cdn.vox-cdn.com/thumbor/fPJRYcGWmkUrR89XCmT551_Iqnk=/0x0:1440x810/1400x1400/filters:focal(513x203:743x433):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/55801581/fairly_odd_parents.0.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  
+}
+
+.outer-box {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.detail-clip {
+  object-fit: cover;
 }
