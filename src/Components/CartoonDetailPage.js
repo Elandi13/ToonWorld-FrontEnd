@@ -18,7 +18,7 @@ function CartoonDetailPage(){
         
     },[id])
 
-    const imageBackground = cartoon.image
+    const imageBackground = cartoon.background
 
     return (
         <div style={{ 
