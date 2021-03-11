@@ -1,6 +1,7 @@
 .card-image {
   height: 200px;
   width: 300px;
+  border-radius: 10px;
 }
 
 .nav-link {
@@ -10,8 +11,6 @@
   font-size: 25px;
   text-shadow: 2px 2px #FF0000;
   display: inline-block;
-  /* background-color: #130d00; */
-  /* border: 1px solid rgb(235, 13, 13); */
   margin: 1rem;
   padding: 1rem;
   text-decoration: none;
@@ -28,11 +27,52 @@
   display: grid;
   justify-content: space-between;
   align-items: center;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
 }
 
 
 .cartoon-card {
-  width: 10%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom, #9999ff 1%, #0066ff 102%);
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  box-shadow: 3px 3px black;
+  transition: transform .2s;
+}
+
+.cartoon-card:hover{
+  transform: scale(1.1);
+}
+
+.card-content{
+  align-items: center;
   display: flex;
   flex-direction: column;
+  
+}
+
+.like-button{
+  border-radius: 10px;
+  margin-bottom: 8px;
+
+}
+
+.app-container{
+  /* background-image: linear-gradient(to bottom, #0066ff  1%, #9999ff 102%); */
+  /* #9999ff */
+  /* #0066ff  */
+}
+
+#root{
+  background-image: linear-gradient(to bottom, #0066ff  1%, #9999ff 102%);
 }

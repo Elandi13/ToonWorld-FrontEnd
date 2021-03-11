@@ -1,20 +1,10 @@
-import React, {useState} from "react"
-import styled from 'styled-components'
+import React from "react"
+// import styled from 'styled-components'
 
-function Filter({search, onSearch, onEraSelect, hideFilter}){
+function Filter({search, onSearch, onEraSelect}){
     
 
-    // const FilterLayout = styled.div`
-    //     padding: 25px;
-    //     display: grid;
-    //     grid-template-columns: 300px auto 300px;
-    //     background-color: green;
-    //     color: white;
-    //     `
 
-    
-
-    // console.log(search)
 
     return(
         <div class="filter-container">

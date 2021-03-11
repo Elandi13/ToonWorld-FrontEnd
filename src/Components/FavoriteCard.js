@@ -16,7 +16,7 @@ function FavoriteCard({fav, favDeleteRequest}){
           Episode: {fav.cartoon.episode} - {fav.cartoon.title} 
       </h1>
       
-        <iframe width="650" height="315" src={fav.cartoon.clip} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>
+        <iframe title={fav.cartoon.title} width="650" height="315" src={fav.cartoon.clip} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>
     
       <ul> 
         <h2>

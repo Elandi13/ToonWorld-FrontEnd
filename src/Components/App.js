@@ -8,7 +8,6 @@ import Filter from "./Filter"
 import CartoonDetailPage from "./CartoonDetailPage"
 import FavoritesList from "./FavoritesList"
 import '../App.css';
-// import userEvent from "@testing-library/user-event";
 import {useHistory} from "react-router-dom"
 
 
@@ -19,8 +18,8 @@ function App() {
   const [eraSelect, setEraSelect] = useState("all")
   const [favorites, setFavorites] = useState([])
   const history = useHistory()
-  const [hideFilter, setHideFilter] = useState(false)
-  // const [favCartoons, setFavCartoons] = useState([])
+  
+
 
       
   
@@ -50,12 +49,6 @@ function App() {
     .then((favArr) => setFavorites(favArr))
   }, [])
 
-// function handleSearchChange(event){
-//   console.log(event.target.value)
-//   setSearch(event.target.value)
-// }
-
-
   const filteredEra = cartoons.filter((cartoon) => {
     if (eraSelect === "all") {
       return cartoons
@@ -76,7 +69,6 @@ function App() {
 
   function handleEraSelect(event){
     setEraSelect(event.target.value) 
-    // console.log(cartoons)
   }
 
 
@@ -96,25 +88,20 @@ function App() {
   }
 
 
-  // console.log(user)
+
   return (
     <div class="app-container">
-
-      <Header 
-        currentUser ={currentUser} 
-        setCurrentUser={setCurrentUser}
-      // cartoons={filteredCartoons} 
-      />
-      
-
       <Switch>
         <Route exact path="/">
+          <Header 
+            currentUser ={currentUser} 
+            setCurrentUser={setCurrentUser}
+          />
           <Filter 
             search={search}
             onSearch={handleSearchChange}
             onEraSelect={handleEraSelect}
             cartoons={filteredCartoons}
-            hideFilter = {hideFilter}
           />
           <CartoonContainer 
             filteredCartoons ={filteredCartoons} 
@@ -124,10 +111,12 @@ function App() {
           /> 
         </Route>
 
-    
-
         <Route path = "/form">
-          <NewForm 
+        <Header 
+          currentUser ={currentUser} 
+          setCurrentUser={setCurrentUser}
+        />
+        <NewForm 
           onAddCartoon ={addCartoon}/> 
         </Route>
 
@@ -136,18 +125,24 @@ function App() {
         </Route>
 
         <Route path ="/cartoons/:id" >
+          <Header 
+            currentUser ={currentUser} 
+            setCurrentUser={setCurrentUser}
+          />
           <CartoonDetailPage />
         </Route>
 
         <Route path ="/favorites" >
-          <Filter 
-            search={search}
-            onSearch={handleSearchChange}
-            onEraSelect={handleEraSelect}
-            cartoons={filteredCartoons}
-            hideFilter = {hideFilter}
+          <Header 
+            currentUser ={currentUser} 
+            setCurrentUser={setCurrentUser}
           />
-          <FavoritesList favorites={favorites} setFavorites={setFavorites}/>
+          <FavoritesList 
+          favorites={favorites} 
+          setFavorites={setFavorites}
+          filteredCartoons ={filteredCartoons} 
+          />
+
         </Route>
 
       </Switch>

@@ -1,6 +1,5 @@
 import React from "react"
 import CartoonCard from "./CartoonCard"
-import { Card } from "semantic-ui-react";
 
 function CartoonContainer({filteredCartoons, onAddFavorite, favorites}) {
     const cartoonList = filteredCartoons.map((cartoon)=>{

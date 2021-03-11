@@ -33,7 +33,7 @@ function Header({currentUser, setCurrentUser}) {
                         </div>
 
                         <div class="nav-option" id="logout-link">
-                            <Link className='nav-link' onClick={()=> setCurrentUser(null)}> Logout </Link>
+                            <Link className='nav-link' to="/" onClick={()=> setCurrentUser(null)}> Logout </Link>
                         </div>
                             </>
                          ) : ( 

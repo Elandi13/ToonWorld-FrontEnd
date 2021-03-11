@@ -31,28 +31,31 @@ function Login({ setCurrentUser}) {
             })
         }
         return(
-            <div>
-            <form onSubmit={handleSubmit}>
-                <h1>Login</h1>
-                <label>Username</label>
-                <input
-                type="text"
-                name="username"
-                autoComplete="off"
-                value={loginFormData.username}
-                onChange={handleChange}
-                />
-                <label>Password</label>
-                <input
-                type="password"
-                name="password"
-                value={loginFormData.password}
-                onChange={handleChange}
-                autoComplete="current-password"
-                />
-                <input type="submit" value="Login" />
-            </form>
-    </div>
+        <div className = "login">
+            <div className="login-form-box"> 
+                <form className="login-form" onSubmit={handleSubmit}>
+                    <h1 className="login-form" > Please Login!</h1>
+                        <label htmlFor="username">Username</label>
+                        <input
+                        type="text"
+                        name="username"
+                        autoComplete="off"
+                        value={loginFormData.username}
+                        onChange={handleChange}
+                        />
+                        <label htmlFor="password">Password</label>
+                        <input
+                        type="password"
+                        name="password"
+                        value={loginFormData.password}
+                        onChange={handleChange}
+                        autoComplete="current-password"
+                        />
+                        <br></br>
+                    <input type="submit" value="Login" className='input-button' />
+                </form>
+            </div>
+        </div>
     )
 }
 
