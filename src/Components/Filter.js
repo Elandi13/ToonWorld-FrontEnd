@@ -17,7 +17,7 @@ function Filter({search, onSearch, onEraSelect}){
                     <option value="2000s" > 2000's </option>
                     <option value="2010s" > 2010's </option>
                 </select>
-            </div>      
+            </div>     
         </div>
     )
 }

@@ -13,7 +13,7 @@ function Header({currentUser, setCurrentUser}) {
             <div class="header-container">
                  
                 <Link to="/">
-                    <img className = "logo-image" src = "https://static.wikia.nocookie.net/yugioh/images/d/d8/ToonWorld-GX02-JP-VG.png/revision/latest/scale-to-width-down/340?cb=20101206081549" alt = "logo" height = "100vh" weight = "100vw" />
+                    <img className = "logo-image" src ="https://cdna.artstation.com/p/assets/images/images/029/860/878/large/enrique-ramos-boquera-stillframe-toon-world0.jpg?1598875874" alt = "logo" height = "100vh" weight = "100vw" />
                 </Link>
                 {/* <Link className='navBarLink' to ="/form"> AddClip </Link>
                         
@@ -23,7 +23,7 @@ function Header({currentUser, setCurrentUser}) {
                 {/* <div> */}
 
                     {currentUser ? (
-                        <> 
+                        <div> 
                         <div class="nav-option" id="add-clip-link">
                             <Link className='nav-link' to ="/form"> Add a Clip </Link>
                         </div>
@@ -35,13 +35,13 @@ function Header({currentUser, setCurrentUser}) {
                         <div class="nav-option" id="logout-link">
                             <Link className='nav-link' to="/" onClick={()=> setCurrentUser(null)}> Logout </Link>
                         </div>
-                            </>
+                            </div>
                          ) : ( 
-                             <> 
+                             <div> 
                         <div class="nav-option" id="favorite-link">
                             <Link className='nav-link' to="/login"> Login </Link>
                         </div>
-                             </> 
+                             </div> 
                      )} 
                 
             </div>

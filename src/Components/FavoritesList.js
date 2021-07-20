@@ -20,7 +20,7 @@ function FavoritesList({favorites, setFavorites}){
         .then(response => response.json())
         .then(handleDeleteFav(id))
     }
-
+ 
 
     return (
         <div class="div-to-scroll">
